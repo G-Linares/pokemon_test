@@ -35,6 +35,8 @@ const mainController = {
               attack: pokeImage.data.stats[1].base_stat,
               defense: pokeImage.data.stats[2].base_stat,
               ability: pokeImage.data.abilities[0].ability.name,
+              sprite: pokeImage.data.sprites.front_default,
+              shinysprite: pokeImage.data.sprites.front_shiny,
               
             };
             pokemonArray.push(newPokeObj);
