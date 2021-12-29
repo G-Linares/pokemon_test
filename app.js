@@ -3,13 +3,14 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const port = process.env.PORT || 3000;
 
-var mainRouter = require('./routes/mainrouter');
+var mainRouter = require('./routes/mainRouter');
 
 
 var app = express();
 
-// view engine setup
+// declaro a EJS como el view engine
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -22,7 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', mainRouter);
 
 
-// capturaa el error 404 y lo envia al error handler de abajo
+// captura el error 404 y lo envia al error handler de abajo
 app.use(function(req, res, next) {
   next(createError(404));
 });
@@ -38,4 +39,6 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+app.listen(port,() => {
+  console.log(`Escuchando el puerto ${port}`);
+})
