@@ -1,41 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../public/CSS/style.css" />
-    <title>Pokedex</title>
+    <%- include('./partials/head') %>
   </head>
   <body>
-    <% pokemon.forEach(function(pokemon){ %>
-
-    <div class="pokemon-container">
-      <div class="idNumber"><%= pokemon.id %></div>
-      <div class="thumbnail">
-        <img src="<%= pokemon.image %>" alt="poke-sprite" />
-        <h3 class="pokemon-name"><%= pokemon.name %></h3>
-        <div class="specific-info">
-          <p class="weight"><%=pokemon.weight %></p>
-          <div class="type">
-            <p class="pokemon-type"><%= pokemon.type %></p>
+    <div class="main-container">
+      <% pokemon.forEach(function(pokemon){ %>
+        <div class="pokemon-container">
+          <div class="idNumber"><%= pokemon.id %></div>
+          <div class="thumbnail">
+            <img src="<%= pokemon.image %>" alt="poke-sprite" class="pokemon-picture"/>
+            <h3 class="pokemon-name"><%= pokemon.name %></h3>
+            <div class="specific-info">
+              <p class="weight"><%=pokemon.weight %></p>
+              <div class="type">
+                <p class="pokemon-type"><%= pokemon.type %></p>
+              </div>
+            </div>
           </div>
+          <div class="focused">
+            <div class="stats">
+              <p class="attack">Attack<span><%= pokemon.attack %></span></p>
+              <p class="defense">Defense<span><%= pokemon.defense %></span></p>
+            </div>
+            <button class="btn">Acerca del Pokemon</button>
+            <div class="abilities">
+              <p class="ability-list"><%= pokemon.ability %></p>
+            </div>
+          </div>
+  
+          <div class="background"></div>
         </div>
-      </div>
-      <div class="focused">
-        <div class="stats">
-          <p class="attack">Attack<span><%= pokemon.attack %></span></p>
-          <p class="defense">Defense<span><%= pokemon.defense %></span></p>
-        </div>
-        <button class="btn">Acerca del Pokemon</button>
-        <div class="abilities">
-          <p class="ability-list"><%= pokemon.ability %></p>
-        </div>
-      </div>
+  
+        <%})%>
 
-      <div class="background"></div>
+
     </div>
-
-    <%})%>
   </body>
 </html>
