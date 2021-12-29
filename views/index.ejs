@@ -8,7 +8,11 @@
   <title>Pokedex</title>
 </head>
 <body>
-  <h1>Deployment worked</h1>
+  <h1>Pokedex</h1>
+
+    <% pokemon.results.forEach(function(results,index){ %>
+      <%= results.name %> </br>
+    <%})%>
   
 </body>
 </html>
