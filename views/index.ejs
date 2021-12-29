@@ -4,18 +4,16 @@
     <%- include('./partials/head') %>
   </head>
   <body>
-    <<%- include('./partials/header') %>
-    <div class="search-container">
-      <section class="main-text">
-        <div class="content">
-            <h3>Search Your Pokemon</h3>
-        </div>
-      </section>
-      <section class="search-bar">
-        <form action="/" method="">
-          <input class = "input" type="text" name="keywords" placeholder="Search You Pokemon Here...">
+    <%- include('./partials/header') %>
+    <div class="banner">
+      <div class="content">
+        <h2> Search For Your Pokemon</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit aspernatur assumenda dignissimos quis. Blanditiis ratione odio natus vel alias assumenda sequi distinctio laboriosam quas obcaecati unde consectetur quaerat vero qui quibusdam cum eligendi dolore cupiditate, eveniet quis perferendis. </p>
+        <form>
+          <input type="text" id="" name="" placeholder="Here..."><br>
         </form>
-      </section>
+      </div>
+      <img src="images/pokeball.png" alt="">
     </div>
     <div class="main-container">
       <% pokemon.forEach(function(pokemon){ %>
