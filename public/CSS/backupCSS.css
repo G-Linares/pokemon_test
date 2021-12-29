@@ -2,7 +2,7 @@
 *::before,
 *::after {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 :root {
@@ -36,14 +36,6 @@ img {
   max-width: 100%;
 }
 
-.main-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
 .btn {
   cursor: pointer;
   border: 0;
@@ -54,37 +46,28 @@ img {
   padding: 0.5em 1.5em;
 }
 
-.icon::before {
-  display: inline-block;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
+.main-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
-.game {
+.pokemon-container {
   position: relative;
   width: 12.5em;
-  padding: 1.3em;
   cursor: pointer;
 }
 
-.streamers {
+.abilities {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   text-align: center;
 }
 
-.streamers img {
-  width: 2em;
-  height: 2em;
-  border-radius: 50%;
-}
-
-.rank {
+.idNumber {
   position: absolute;
   top: 0;
   right: 1em;
@@ -94,68 +77,49 @@ img {
   background: rgba(0, 0, 0, 0.65);
   padding: 0.5em 0.5em 0.75em;
   -webkit-clip-path: polygon(100% 0%, 100% 100%, 50% 85%, 0 100%, 0 0);
-          clip-path: polygon(100% 0%, 100% 100%, 50% 85%, 0 100%, 0 0);
+  clip-path: polygon(100% 0%, 100% 100%, 50% 85%, 0 100%, 0 0);
   -webkit-transition: var(--transition);
   transition: var(--transition);
 }
 
-.front {
+.thumbnail {
   -webkit-transition: 250ms;
   transition: 250ms;
 }
 
-.front .thumbnail {
+.thumbnail .pokemon-picture {
   border-radius: var(--br);
 }
 
-.front .name {
-  margin: 0.75em 0;
-}
-
-.front .stats {
+.thumbnail .specific-info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.front .viewers {
+.thumbnail .weight {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.front .viewers::before {
+.thumbnail .type::before {
   content: "\f007";
   color: rgba(255, 255, 255, 0.75);
   font-size: 0.75em;
   margin-right: 0.5em;
 }
 
-.front .streamers img {
-  border: 2px solid var(--clr-dark);
-}
-
-.front .streamers img:nth-of-type(1) {
-  -webkit-transform: translateX(50%);
-          transform: translateX(50%);
-  z-index: 1;
-}
-
-.front .streamers img:nth-of-type(2) {
-  -webkit-transform: translateX(25%);
-          transform: translateX(25%);
-}
-
-.back {
+.focused {
   opacity: 0;
   position: absolute;
   top: 55%;
@@ -166,30 +130,38 @@ img {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   gap: 1.5em;
   -webkit-transform: translateY(35%);
-          transform: translateY(35%);
+  transform: translateY(35%);
 }
 
-.back .streaming-info {
+.focused .stats {
   -webkit-columns: 2;
-          columns: 2;
+  columns: 2;
   -webkit-column-rule: 1px solid rgba(255, 255, 255, 0.25);
-          column-rule: 1px solid rgba(255, 255, 255, 0.25);
+  column-rule: 1px solid rgba(255, 255, 255, 0.25);
 }
 
-.back .game-stat {
-  font-size: 1.125rem;
+.focused .attack {
+  font-size: 16px;
   text-align: center;
 }
 
-.back .game-stat span {
-  font-size: 0.85rem;
+.focused .attack span {
+  display: block;
+}
+
+.focused .defense {
+  font-size: 16px;
+  text-align: center;
+}
+
+.focused .defense span {
   display: block;
 }
 
@@ -202,76 +174,58 @@ img {
   right: 0;
   z-index: -1;
   -webkit-transform: scale(0.2, 0.9);
-          transform: scale(0.2, 0.9);
+  transform: scale(0.2, 0.9);
   opacity: 0;
   border-radius: var(--br);
   overflow: hidden;
 }
 
-.background img {
-  opacity: .3;
-  -webkit-clip-path: url(#wave);
-          clip-path: url(#wave);
-  height: 30%;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.game:hover .rank {
+.pokemon-container:hover .idNumber {
   -webkit-transform: translate(150%, -61%);
-          transform: translate(150%, -61%);
+  transform: translate(150%, -61%);
 }
 
-.game:hover .front {
+.pokemon-container:hover .thumbnail {
   -webkit-transform: translateY(-30%) scale(0.8);
-          transform: translateY(-30%) scale(0.8);
+  transform: translateY(-30%) scale(0.8);
 }
 
-.game:hover .front .name {
+.pokemon-container:hover .thumbnail .pokemon-name {
   -webkit-animation: gameName 250ms forwards;
-          animation: gameName 250ms forwards;
+  animation: gameName 250ms forwards;
 }
 
-.game:hover .front .stats {
+.pokemon-container:hover .thumbnail .specific-info {
   opacity: 0;
 }
 
-.game:hover .front .svg-front {
-  opacity: 0;
-}
-
-.game:hover .back {
+.pokemon-container:hover .focused {
   opacity: 1;
   -webkit-transition: opacity 150ms linear, -webkit-transform 250ms ease;
   transition: opacity 150ms linear, -webkit-transform 250ms ease;
   transition: transform 250ms ease, opacity 150ms linear;
   transition: transform 250ms ease, opacity 150ms linear, -webkit-transform 250ms ease;
   -webkit-transform: translateY(0);
-          transform: translateY(0);
+  transform: translateY(0);
 }
 
-.game:hover .back .streamers {
+.pokemon-container:hover .focused .abilities {
   width: 100%;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
-.game:hover .back .streamer {
-  font-size: 0.9rem;
-}
-
-.game:hover .back .name {
+.pokemon-container:hover .focused .ability-list {
   font-weight: bold;
 }
 
-.game:hover .background {
+.pokemon-container:hover .background {
   -webkit-transition: var(--transition), opacity 100ms linear;
   transition: var(--transition), opacity 100ms linear;
   opacity: 1;
-  -webkit-transform: scale(1.1, 1.1) translateY(5%);
-          transform: scale(1.1, 1.1) translateY(5%);
+  -webkit-transform: scale(1.35, 1.3) translateY(5%);
+  transform: scale(1.35, 1.3) translateY(5%);
 }
 
 @-webkit-keyframes gameName {
@@ -287,13 +241,13 @@ img {
     text-align: center;
     opacity: 0;
     -webkit-transform: scale(1.2);
-            transform: scale(1.2);
+    transform: scale(1.2);
   }
   100% {
     text-align: center;
     opacity: 1;
     -webkit-transform: scale(1.2);
-            transform: scale(1.2);
+    transform: scale(1.2);
   }
 }
 
@@ -310,17 +264,17 @@ img {
     text-align: center;
     opacity: 0;
     -webkit-transform: scale(1.2);
-            transform: scale(1.2);
+    transform: scale(1.2);
   }
   100% {
     text-align: center;
     opacity: 1;
     -webkit-transform: scale(1.2);
-            transform: scale(1.2);
+    transform: scale(1.2);
   }
 }
 
-.streamer .icon {
+.abilities .icon {
   display: inline-block;
   width: 2em;
   height: 2em;
@@ -331,7 +285,22 @@ img {
   transition: transform ease-in-out 150ms, -webkit-transform ease-in-out 150ms;
 }
 
-.streamer .icon::before, .streamer .icon::after {
+.abilities:hover .ability-list {
+  -webkit-transform: translateY(-10%);
+  transform: translateY(-10%);
+}
+
+.abilities:hover .ability-list::before {
+  opacity: 1;
+}
+
+.abilities .ability-list:hover {
+  -webkit-transform: translateY(-15%) scale(1.2);
+  transform: translateY(-15%) scale(1.2);
+}
+
+.abilities .ability-list::before,
+.abilities .ability-list::after {
   opacity: 0;
   content: "";
   position: absolute;
@@ -342,11 +311,11 @@ img {
   border-radius: 50%;
 }
 
-.streamer .icon::before {
+.abilities .ability-list::before {
   content: "\f04b";
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  font-size: 0.65em;
+  font-size: .65em;
   background: #f00;
   display: -ms-grid;
   display: grid;
@@ -356,40 +325,26 @@ img {
   transition: opacity 75ms linear, background-color 100ms linear;
 }
 
-.streamer .icon:hover {
-  -webkit-transform: translateY(-15%) scale(1.2);
-          transform: translateY(-15%) scale(1.2);
-}
-
-.streamer .icon:hover::before {
+.abilities .ability-list:hover::before {
   background: #cc0202;
 }
 
-.streamer .icon:hover::after {
+.abilities .ability-list:hover::after {
   background: #f00;
   z-index: 1;
   -webkit-animation: pulse 1250ms infinite;
-          animation: pulse 1250ms infinite;
-}
-
-.streamer:hover .icon {
-  -webkit-transform: translateY(-10%);
-          transform: translateY(-10%);
-}
-
-.streamer:hover .icon::before {
-  opacity: 1;
+  animation: pulse 1250ms infinite;
 }
 
 @-webkit-keyframes pulse {
   0% {
     -webkit-transform: scale(0.95);
-            transform: scale(0.95);
+    transform: scale(0.95);
     opacity: 0.9;
   }
   100% {
     -webkit-transform: scale(1.4);
-            transform: scale(1.4);
+    transform: scale(1.4);
     opacity: 0;
   }
 }
@@ -397,12 +352,12 @@ img {
 @keyframes pulse {
   0% {
     -webkit-transform: scale(0.95);
-            transform: scale(0.95);
+    transform: scale(0.95);
     opacity: 0.9;
   }
   100% {
     -webkit-transform: scale(1.4);
-            transform: scale(1.4);
+    transform: scale(1.4);
     opacity: 0;
   }
 }
