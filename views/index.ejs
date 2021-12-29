@@ -6,31 +6,58 @@
   <body>
     <div class="main-container">
       <% pokemon.forEach(function(pokemon){ %>
-        <div class="pokemon-container">
-          <div class="idNumber"><%= pokemon.id %></div>
-          <div class="thumbnail">
-            <img src="<%= pokemon.image %>" alt="poke-sprite" class="pokemon-picture"/>
-            <h3 class="pokemon-name"><%= pokemon.name %></h3>
-            <div class="specific-info">
-              <p class="weight"><%=pokemon.weight %></p>
-              <div class="type">
+        <div class="game">
+          <div class="rank"><%= pokemon.id %></div>
+    
+          <div class="front">
+          
+            <img class="thumbnail" src="<%= pokemon.image %>" alt="" />
+            <h3 class="name icon"><%= pokemon.name %></h3>
+            <div class="stats">
+              <p class="viewers icon"><%=pokemon.weight%>Kg.</p>
+              <div class="streamers">
+               
+                <img src="images/types/<%=pokemon.type1%>.png" alt="" />
+                <% if (pokemon.type2){%>
+                  <img src="images/types/<%=pokemon.type2%>.png" alt="" />
+                <%}%>
+
+                
                 
               </div>
             </div>
           </div>
-          <div class="focused">
-            <div class="stats">
-              <p class="attack">Attack<span><%= pokemon.attack %></span></p>
-              <p class="defense">Defense<span><%= pokemon.defense %></span></p>
+    
+          <div class="back">
+            <div class="streaming-info">
+              <p class="game-stat">559k<span>Watching</span></p>
+              <p class="game-stat">25.8k<span>Streams</span></p>
             </div>
-            <button class="btn">Acerca del Pokemon</button>
-            <div class="abilities">
-              <p class="ability-list"><%= pokemon.ability %></p>
+            <button class="btn">See more streams</button>
+            <div class="streamers">
+              <div class="streamer">
+                <div class="icon"><img src="images/pokeball.png" alt="" /></div>
+                <p class="name">Gamer1</p>
+                <p class="number">36.1k</p>
+              </div>
+              <div class="streamer">
+                <div class="icon"><img src="images/pokeball.png" alt="" /></div>
+                <p class="name">Gamer 2</p>
+                <p class="number">35.1k</p>
+              </div>
+              <div class="streamer">
+                <div class="icon"><img src="images/pokeball.png" alt="" /></div>
+                <p class="name">Gamer 3</p>
+                <p class="number">34.1k</p>
+              </div>
             </div>
           </div>
-  
-          <div class="background"></div>
+    
+          <div class="background">
+            <div style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C149.99,150.00 271.49,-49.98 500.00,49.98 L500.00,0.00 L0.00,0.00 Z" style="stroke: none; fill: rgb(160, 40, 40);"></path></svg></div>
+          </div>
         </div>
+        
   
         <%})%>
 
