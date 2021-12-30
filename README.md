@@ -2,12 +2,13 @@
 <br />
 <div align="center">
   
-  <h3 align="center">Pokédex</h3>
+  <h1 align="center">Pokédex</h1>
 
 </div>
 
 <!-- TABLE OF CONTENTS -->
 <details>
+<br />
   <summary>Table of Contents</summary>
   <ol>
     <li>
@@ -83,11 +84,11 @@ Se va a necesitar tener instalda la última versión de NPM, para poder descarga
 - [x] Agrega la opción de búsqueda de información.
 - [x] Interactúa con la información obtenida del API, flujo básico de navegación de recursos.
 - [x] Agrega un menú de hamburguesa y un botón flotante.
-- [ ] Añade estados.
-- [ ] Añade Redux.
 - [x] Muestra tu proyecto live en alguna plataforma en la nube.
 - [x] Agrega un preprocesador de estilos.
 - [x] Empaqueta tu aplicación en un contenedor de Docker.
+- [ ] Añade estados.
+- [ ] Añade Redux.
 
 
 ## Enlaces de proyecto
@@ -99,6 +100,7 @@ Se va a necesitar tener instalda la última versión de NPM, para poder descarga
 Gerardo Linares Gutiérrez - gerrylinares@gmail.com
 
 Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+
 [Linked.in](https://www.linkedin.com/in/gerardo-linares-6b1b07213/)
 
 <p align="right">(<a href="#top">Regesar arriba</a>)</p>
