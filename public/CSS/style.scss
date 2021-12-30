@@ -21,7 +21,7 @@ body {
   min-height: 100vh;
   display: grid;
   place-items: center;
-  background: var(--clr-dark);
+  background-image: url(../images/background.png);
   color: var(--clr-light);
 }
 
@@ -36,9 +36,127 @@ img {
   max-width: 100%;
 }
 
+header{
+  position:absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 45px 100px;
+  z-index:10;
+  background: rgba(2, 2, 2, 0.315);
+}
+
+header .logo img{
+  position: relative;
+  font-size: 1.5em;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: sans-serif;
+  width: 150px;
+  height: 55px;
+}
+
+header .navigation {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 10px 0px;
+}
+
+header .navigation li {
+  list-style:none;
+  margin: 0 10px;
+}
+header .navigation li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 1px;
+
+}
+
+header .navigation li a:hover{
+  color: red;
+}
+
+header .search {
+  position: relative;
+  width:300px;
+  height: 40px;
+}
+
+header .search input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #ffff;
+  background: transparent;
+  outline: none;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  padding: 0 10px 0 45px;
+}
+
+header .search input::placeholder {
+  color: #fff;
+}
+
+header .search .fa-search{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+  color: #fff;
+  border-right: 1px solid #fff;
+  padding-right: 10px;
+}
+
+.banner {
+  padding: 200px 100px 100px;
+  min-height: 80vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.banner .content {
+  max-width: 700px;
+}
+
+.banner .content h2 {
+  font-size: 5em;
+  color: black;
+}
+
+.banner .content p {
+  font-size: 2em;
+  color: black;
+}
+
+.banner .content  input {
+  display: inline-block;
+  padding: 8px 20px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 20px;
+  border-radius: 15px;
+  border: white;
+  width: 70%;
+  height: 2rem;
+  font-size: 1.2rem;
+}
+
 .main-container {
   display: flex;
   flex-wrap: wrap;
+  align-self: center;
+  padding: 2rem;
 }
 
 .btn {
@@ -51,25 +169,31 @@ img {
   padding: 0.5em 1.5em;
 }
 
-.icon::before {
-  display: inline-block;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-}
 
-.game {
+.pokemon-container {
   position: relative;
-  width: 12.5em;
+  width: 13.2em;
   padding: 1.3em;
+  padding-top: 3rem;
+  margin: 1.3em;
+  margin-top: 3rem;
+  background-color: rgba(0,0,0,0.6);
+  border-radius: 10px;
   cursor: pointer;
+
+  img {
+    width: 200px;
+    height: 200px;
+  }
   
 }
 
-.streamers {
+.name-poke {
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.types {
   display: flex;
   text-align: center;
 
@@ -80,14 +204,14 @@ img {
   }
 }
 
-.rank {
+.pokeId {
   position: absolute;
-  top: 0;
-  right: 1em;
+  top: .5em;
+  right: 1.5em;
   z-index: 1000;
   font-weight: bold;
   font-size: 1.125rem;
-  background: rgba(0, 0, 0, 0.65);
+  background: rgb(245, 15, 15);
   padding: 0.5em 0.5em 0.75em;
   clip-path: polygon(100% 0%, 100% 100%, 50% 85%, 0 100%, 0 0);
   transition: var(--transition);
@@ -100,30 +224,15 @@ img {
     border-radius: var(--br);
   }
 
-  .name {
-    margin: 0.75em 0;
-  }
-
   .stats {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
-  .viewers {
-    display: flex;
-    align-items: center;
-  }
 
-  .viewers::before {
-    content: "\f007";
-    color: rgba(255, 255, 255, 0.75);
-    font-size: 0.75em;
-    margin-right: 0.5em;
-  }
-
-  .streamers img {
-    border: 2px solid var(--clr-dark);
+  .types img {
+    border: 2px solid rgba(255, 255, 255, 0.185);
 
     &:nth-of-type(1) {
       transform: translateX(50%);
@@ -186,9 +295,11 @@ img {
   }
 }
 
-.game:hover {
+.pokemon-container:hover {
+
+ background-color: rgba(255, 255, 255, 0);
   
-  .rank {
+  .pokeId {
     transform: translate(150%, -61%);
   }
 
@@ -206,6 +317,7 @@ img {
     .svg-front {
       opacity: 0;
     }
+    
   }
 
   .back {
@@ -213,7 +325,7 @@ img {
     transition: transform 250ms ease, opacity 150ms linear;
     transform: translateY(0);
 
-    .streamers {
+    .types {
       width: 100%;
       justify-content: space-between;
     }
@@ -226,13 +338,20 @@ img {
       font-weight: bold;
     }
 
+    .sprites img {
+      height: 100px;
+      width: 100px;
+      position: relative;
+      bottom: 30px;
+ 
+    }
     
   }
 
   .background {
     transition: var(--transition), opacity 100ms linear;
     opacity: 1;
-    transform: scale(1.1, 1.1) translateY(5%);
+    transform: scale(1.2, 1.2) translateY(5%);
   }
 }
 
@@ -321,4 +440,50 @@ img {
     transform: scale(1.4);
     opacity: 0;
   }
+}
+
+
+@media (max-width: 990px) {
+  header {
+    padding: 10px 20px;
+    flex-direction: column;
+  }
+
+  .banner {
+    padding: 150px 20px 50px;
+    flex-direction: column-reverse;
+    margin-top: 20px;
+  }
+
+  .banner .image{
+    margin-left: 0;
+    max-width: 80%;
+    margin-top: 30px;
+  }
+
+  .banner .content h2 {
+    font-size: 2em;
+
+  }
+  .pokemon-container{
+ 
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+@media (max-width: 660px) {
+  header .seach {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .banner .image{
+    margin-top: 30px;
+    
+  }
+
+
+
+
 }
