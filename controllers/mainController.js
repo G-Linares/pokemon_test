@@ -4,7 +4,7 @@ const mainController = {
     index : async(req, res) => {
         try {
           //fetch al API de PokeAPI
-          const pokemonApi = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=100");
+          const pokemonApi = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=25");
           const pokemonApiLength = pokemonApi.data.results.length;
           const pokemonArray = [];
           
