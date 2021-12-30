@@ -7,8 +7,8 @@
 </div>
 
 <!-- TABLE OF CONTENTS -->
-<details>
 <br />
+<details>
   <summary>Table of Contents</summary>
   <ol>
     <li>
@@ -32,7 +32,11 @@
 
 ## Acerca del Proyecto
 
-Este proyecto fue creado con el proósito de demostrar mis habilidades como desarrollador Fron'end Jr. y así aplicar para una entrevista de trabajo con Cura Deuda.
+Este proyecto fue creado con el prósito de demostrar mis habilidades como desarrollador Fron'end Jr. y así aplicar para una entrevista de trabajo con Cura Deuda.
+
+La aplicación muestra un grid con los resultados de búqueda, de igual forma muestra algunas características de ellos, como tipo, estadísticas de pelea, sprite normal y shiny, número y peso.
+
+En la página principal se listan los primeros 20 pokémon. Pero se puede visualizar el que sea simplemente haciendo una búsqueda en barra principal o en la barra de navegación. De igual forma se pueden buscar a un grup de pokémon que contenga una letra o una frase en común, de esta forma se muestran varios resultados.
 
 ### Tecnologías usadas
 
