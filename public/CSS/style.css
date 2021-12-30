@@ -66,7 +66,7 @@ header .logo img {
   height: 55px;
 }
 
-header .navigation {
+header .nav-menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -78,19 +78,19 @@ header .navigation {
   margin: 10px 0px;
 }
 
-header .navigation li {
+header .nav-menu li {
   list-style: none;
   margin: 0 10px;
 }
 
-header .navigation li a {
+header .nav-menu li a {
   color: #fff;
   text-decoration: none;
   font-weight: 500;
   letter-spacing: 1px;
 }
 
-header .navigation li a:hover {
+header .nav-menu li a:hover {
   color: red;
 }
 
@@ -139,6 +139,37 @@ header .search .fa-search {
   color: #fff;
   border-right: 1px solid #fff;
   padding-right: 10px;
+}
+
+header .burger-menu {
+  display: none;
+}
+
+.nav-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 60px;
+}
+
+.nav-link {
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+}
+
+.nav-link:hover {
+  color: red;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
 }
 
 .banner {
@@ -694,11 +725,52 @@ header .search .fa-search {
     width: 100%;
     margin-bottom: 20px;
   }
+  header .burger-menu {
+    display: inline-block;
+    font-size: 3rem;
+    padding: 15px;
+  }
+  header .nav-menu {
+    display: none;
+  }
   .banner .image {
     margin-top: 30px;
   }
   .banner {
     width: 60%;
+    margin-top: 80px;
+  }
+  .main-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .hamburger {
+    display: block;
+  }
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    gap: 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background-color: #262626;
+    width: 100%;
+    text-align: center;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  .nav-item {
+    margin: 16px 0;
+  }
+  .nav-menu.active {
+    left: 0;
   }
 }
 /*# sourceMappingURL=style.css.map */

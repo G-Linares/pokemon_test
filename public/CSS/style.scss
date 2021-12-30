@@ -60,18 +60,18 @@ header .logo img{
   height: 55px;
 }
 
-header .navigation {
+header .nav-menu {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   margin: 10px 0px;
 }
 
-header .navigation li {
+header .nav-menu li {
   list-style:none;
   margin: 0 10px;
 }
-header .navigation li a {
+header .nav-menu li a {
   color: #fff;
   text-decoration: none;
   font-weight: 500;
@@ -79,7 +79,7 @@ header .navigation li a {
 
 }
 
-header .navigation li a:hover{
+header .nav-menu li a:hover{
   color: red;
 }
 
@@ -116,6 +116,41 @@ header .search .fa-search{
   border-right: 1px solid #fff;
   padding-right: 10px;
 }
+
+header .burger-menu{
+  display: none;
+}
+
+
+
+
+
+
+.nav-menu{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+}
+
+.nav-link{
+  transition: 0.3s ease-out;
+}
+
+.nav-link:hover{
+  color: red;
+}
+
+.hamburger{
+  display: none;
+  cursor: pointer;
+}
+
+
+
+
+
+
 
 .banner {
   padding: 200px 100px 100px;
@@ -168,22 +203,6 @@ header .search .fa-search{
   font-weight: bold;
   padding: 0.5em 1.5em;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .action {
   position: fixed;
@@ -271,19 +290,6 @@ header .search .fa-search{
  .action ul li:hover i{
    opacity: 0.8;
  }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .pokemon-container {
   position: relative;
@@ -593,16 +599,55 @@ header .search .fa-search{
     margin-bottom: 20px;
   }
 
+  header .burger-menu {
+    display: inline-block;
+    font-size: 3rem;
+    padding: 15px;
+  }
+
+  header .nav-menu {
+    display: none;
+  }
+
   .banner .image{
     margin-top: 30px;
+
     
   }
   .banner {
     width: 60%;
+    margin-top: 80px;
   
   }
 
+  .main-container {
+    display: flex;
+    justify-content: center;
+  }
 
+  .hamburger{
+    display: block;
+  }
+
+  .nav-menu{
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    gap: 0;
+    flex-direction: column;
+    background-color: #262626;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+  }
+
+  .nav-item{
+    margin: 16px 0;
+  }
+
+  .nav-menu.active{
+    left: 0;
+  }
 
 
 }
