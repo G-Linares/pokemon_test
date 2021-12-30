@@ -242,6 +242,11 @@ header .search .fa-search{
   flex-wrap: wrap;
   align-self: center;
   padding: 2rem;
+  justify-content: center;
+}
+
+#filtered-main-container {
+  margin-top: 200px;
 }
 
 .btn {

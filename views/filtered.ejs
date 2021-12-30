@@ -6,7 +6,7 @@
   <body>
     <%- include('./partials/header') %>
 
-    <div class="main-container">
+    <div class="main-container" id="filtered-main-container">
       <% pokemon.forEach(function(pokemon){ %>
         <div class="pokemon-container">
           <div class="pokeId"><%= pokemon.id %></div>
