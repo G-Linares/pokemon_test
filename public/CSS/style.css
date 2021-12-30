@@ -6,23 +6,20 @@
 }
 
 :root {
-  --clr-dark: rgb(13, 17, 19);
-  --clr-light: #fff;
+  --clr-poke-red: rgb(252, 4, 4);
   --clr-accent: rgb(222, 52, 0);
-  --clr-accent-dark: rgb(163, 38, 0);
-  --clr-secondary: rgb(0, 76, 199);
   --br: 0.5em;
   --transition: transform 200ms cubic-bezier(0.21, 1, 0.81, 1);
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   min-height: 100vh;
   display: -ms-grid;
   display: grid;
   place-items: center;
   background-image: url(../images/background.png);
-  color: var(--clr-light);
+  color: #fff;
 }
 
 h1,
@@ -149,7 +146,7 @@ header .search .fa-search {
 }
 
 .nav-link:hover {
-  color: red;
+  color: var(--clr-poke-red);
 }
 
 .hamburger {
@@ -229,9 +226,9 @@ header .search .fa-search {
 .btn {
   cursor: pointer;
   border: 0;
-  background: var(--clr-secondary);
+  background-color: #2d65ff;
   border-radius: 100vw;
-  color: var(--clr-light);
+  color: #fff;
   font-weight: bold;
   padding: 0.5em 1.5em;
 }
@@ -250,8 +247,8 @@ header .search .fa-search {
   border-radius: 100%;
   margin: 0 auto;
   cursor: pointer;
-  background: -webkit-gradient(linear, left top, left bottom, from(#BA0C2F), color-stop(49%, #BA0C2F), color-stop(50%, #262122), color-stop(51%, #FFF), to(#FFF));
-  background: linear-gradient(180deg, #BA0C2F 0%, #BA0C2F 49%, #262122 50%, #FFF 51%, #FFF 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#ba0c2f), color-stop(49%, #ba0c2f), color-stop(50%, #262122), color-stop(51%, #fff), to(#fff));
+  background: linear-gradient(180deg, #ba0c2f 0%, #ba0c2f 49%, #262122 50%, #fff 51%, #fff 100%);
   z-index: 20;
 }
 
@@ -380,11 +377,11 @@ header .search .fa-search {
 
 .pokeId {
   position: absolute;
-  top: .5em;
+  top: 0.5em;
   right: 1.5em;
   font-weight: bold;
   font-size: 1.125rem;
-  background: #f50f0f;
+  background: var(--clr-poke-red);
   padding: 0.5em 0.5em 0.75em;
   -webkit-clip-path: polygon(100% 0%, 100% 100%, 50% 85%, 0 100%, 0 0);
           clip-path: polygon(100% 0%, 100% 100%, 50% 85%, 0 100%, 0 0);
@@ -449,7 +446,7 @@ header .search .fa-search {
           transform: translateY(35%);
 }
 
-.back .streaming-info {
+.back .pokemon-info {
   -webkit-columns: 2;
           columns: 2;
   -webkit-column-rule: 1px solid rgba(255, 255, 255, 0.25);
@@ -482,7 +479,7 @@ header .search .fa-search {
 }
 
 .background img {
-  opacity: .3;
+  opacity: 0.3;
   -webkit-clip-path: url(#wave);
           clip-path: url(#wave);
   height: 30%;
@@ -505,16 +502,7 @@ header .search .fa-search {
           transform: translateY(-30%) scale(0.8);
 }
 
-.pokemon-container:hover .front .name {
-  -webkit-animation: gameName 250ms forwards;
-          animation: gameName 250ms forwards;
-}
-
 .pokemon-container:hover .front .stats {
-  opacity: 0;
-}
-
-.pokemon-container:hover .front .svg-front {
   opacity: 0;
 }
 
@@ -535,12 +523,8 @@ header .search .fa-search {
           justify-content: space-between;
 }
 
-.pokemon-container:hover .back .streamer {
+.pokemon-container:hover .back .sprite-container {
   font-size: 0.9rem;
-}
-
-.pokemon-container:hover .back .name {
-  font-weight: bold;
 }
 
 .pokemon-container:hover .back .sprites img {
@@ -556,139 +540,6 @@ header .search .fa-search {
   opacity: 1;
   -webkit-transform: scale(1.2, 1.2) translateY(5%);
           transform: scale(1.2, 1.2) translateY(5%);
-}
-
-@-webkit-keyframes gameName {
-  0% {
-    text-align: left;
-    opacity: 1;
-  }
-  20% {
-    text-align: left;
-    opacity: 0;
-  }
-  50% {
-    text-align: center;
-    opacity: 0;
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-  }
-  100% {
-    text-align: center;
-    opacity: 1;
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-  }
-}
-
-@keyframes gameName {
-  0% {
-    text-align: left;
-    opacity: 1;
-  }
-  20% {
-    text-align: left;
-    opacity: 0;
-  }
-  50% {
-    text-align: center;
-    opacity: 0;
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-  }
-  100% {
-    text-align: center;
-    opacity: 1;
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-  }
-}
-
-.streamer .icon {
-  display: inline-block;
-  width: 2em;
-  height: 2em;
-  position: relative;
-  -webkit-transition: -webkit-transform ease-in-out 150ms;
-  transition: -webkit-transform ease-in-out 150ms;
-  transition: transform ease-in-out 150ms;
-  transition: transform ease-in-out 150ms, -webkit-transform ease-in-out 150ms;
-}
-
-.streamer .icon::before, .streamer .icon::after {
-  opacity: 0;
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  border-radius: 50%;
-}
-
-.streamer .icon::before {
-  content: "\f04b";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  font-size: 0.65em;
-  background: #f00;
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
-  z-index: 10;
-  -webkit-transition: opacity 75ms linear, background-color 100ms linear;
-  transition: opacity 75ms linear, background-color 100ms linear;
-}
-
-.streamer .icon:hover {
-  -webkit-transform: translateY(-15%) scale(1.2);
-          transform: translateY(-15%) scale(1.2);
-}
-
-.streamer .icon:hover::before {
-  background: #cc0202;
-}
-
-.streamer .icon:hover::after {
-  background: #f00;
-  z-index: 1;
-  -webkit-animation: pulse 1250ms infinite;
-          animation: pulse 1250ms infinite;
-}
-
-.streamer:hover .icon {
-  -webkit-transform: translateY(-10%);
-          transform: translateY(-10%);
-}
-
-.streamer:hover .icon::before {
-  opacity: 1;
-}
-
-@-webkit-keyframes pulse {
-  0% {
-    -webkit-transform: scale(0.95);
-            transform: scale(0.95);
-    opacity: 0.9;
-  }
-  100% {
-    -webkit-transform: scale(1.4);
-            transform: scale(1.4);
-    opacity: 0;
-  }
-}
-
-@keyframes pulse {
-  0% {
-    -webkit-transform: scale(0.95);
-            transform: scale(0.95);
-    opacity: 0.9;
-  }
-  100% {
-    -webkit-transform: scale(1.4);
-            transform: scale(1.4);
-    opacity: 0;
-  }
 }
 
 @media (max-width: 990px) {
@@ -745,7 +596,7 @@ header .search .fa-search {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    background-color: var(--clr-accent-dark);
+    background-color: rgba(0, 0, 0, 0.6);
     width: 100%;
     z-index: 1000;
     text-align: center;

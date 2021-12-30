@@ -50,21 +50,17 @@
           </div>
     
           <div class="back">
-            <div class="streaming-info">
+            <div class="pokemon-info">
               <p class="game-stat"><%=pokemon.attack%><span>Attack</span></p>
               <p class="game-stat"><%=pokemon.defense%><span>Defense</span></p>
             </div>
             <button class="btn">Learn more about <%= pokemon.name %></button>
             <div class="types">
-              <div class="streamer">
-                <div class="sprites"><img src="<%=pokemon.sprite %>" alt="" /></div>
-                
-                
+              <div class="sprite-container">
+                <div class="sprites"><img src="<%=pokemon.sprite %>" alt="" /></div>        
               </div>
-              <div class="streamer">
+              <div class="sprite-container">
                 <div class="sprites"><img src="<%=pokemon.shinysprite%>" alt="" /></div>
-                
-               
               </div>
             </div>
           </div>

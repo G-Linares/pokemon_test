@@ -5,60 +5,58 @@
   </head>
   <body>
     <%- include('./partials/header') %>
-
     <div class="main-container" id="filtered-main-container">
       <% pokemon.forEach(function(pokemon){ %>
-        <div class="pokemon-container">
-          <div class="pokeId"><%= pokemon.id %></div>
-    
-          <div class="front">
-          
-            <img class="thumbnail" src="<%= pokemon.image %>" alt="" />
-            <h3 class="name-poke"><%= pokemon.name %></h3>
-            <div class="stats">
-              <p class="viewers icon"><%=pokemon.weight%>Kg.</p>
-              <div class="types">
-               
-                <img src="images/types/<%=pokemon.type1%>.png" alt="" />
-                <% if (pokemon.type2){%>
-                  <img src="images/types/<%=pokemon.type2%>.png" alt="" />
-                <%}%>
-
-                
-                
-              </div>
-            </div>
-          </div>
-    
-          <div class="back">
-            <div class="streaming-info">
-              <p class="game-stat"><%=pokemon.attack%><span>Attack</span></p>
-              <p class="game-stat"><%=pokemon.defense%><span>Defense</span></p>
-            </div>
-            <button class="btn">Learn more about <%= pokemon.name %></button>
+      <div class="pokemon-container">
+        <div class="pokeId"><%= pokemon.id %></div>
+        <div class="front">
+          <img class="altImage" src="<%= pokemon.image %>" alt="" />
+          <h3 class="name-poke"><%= pokemon.name %></h3>
+          <div class="stats">
+            <p class="viewers icon"><%=pokemon.weight%>Kg.</p>
             <div class="types">
-              <div class="streamer">
-                <div class="sprites"><img src="<%=pokemon.sprite %>" alt="" /></div>
-                
-                
-              </div>
-              <div class="streamer">
-                <div class="sprites"><img src="<%=pokemon.shinysprite%>" alt="" /></div>
-                
-               
-              </div>
+              <img src="images/types/<%=pokemon.type1%>.png" alt="" />
+              <% if (pokemon.type2){%>
+              <img src="images/types/<%=pokemon.type2%>.png" alt="" />
+              <%}%>
             </div>
-          </div>
-    
-          <div class="background">
-            <div style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C-155.47,178.13 271.49,-49.98 525.67,84.38 L500.00,0.00 L0.00,0.00 Z" style="stroke: none; fill: rgb(0, 5, 10);"></path></svg></div>
           </div>
         </div>
-        
-  
-        <%})%>
-
-
+        <div class="back">
+          <div class="pokemon-info">
+            <p class="game-stat"><%=pokemon.attack%><span>Attack</span></p>
+            <p class="game-stat"><%=pokemon.defense%><span>Defense</span></p>
+          </div>
+          <button class="btn">Learn more about <%= pokemon.name %></button>
+          <div class="types">
+            <div class="sprite-container">
+              <div class="sprites">
+                <img src="<%=pokemon.sprite %>" alt="" />
+              </div>
+            </div>
+            <div class="sprite-container">
+              <div class="sprites">
+                <img src="<%=pokemon.shinysprite%>" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="background">
+          <div style="height: 150px; overflow: hidden">
+            <svg
+              viewBox="0 0 500 150"
+              preserveAspectRatio="none"
+              style="height: 100%; width: 100%"
+            >
+              <path
+                d="M0.00,49.98 C-155.47,178.13 271.49,-49.98 525.67,84.38 L500.00,0.00 L0.00,0.00 Z"
+                style="stroke: none; fill: rgb(0, 5, 10)"
+              ></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <%})%>
     </div>
   </body>
   <script src="JS/script.js"></script>
