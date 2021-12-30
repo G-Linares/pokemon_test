@@ -1,6 +1,4 @@
 const axios = require('axios');
-const { render } = require('express/lib/response');
-
 
 function secondType(secondType){
   if(secondType){
@@ -8,12 +6,19 @@ function secondType(secondType){
   } else return undefined;
 }
 
+function validImage(imgURL){
+  if(imgURL.other.dream_world.front_default != null){
+    return imgURL.other.dream_world.front_default
+  } else if (imgURL.other.home.front_default != null){
+    return imgURL.other.home.front_default;
+  } else return imgURL.front_default;
+}
 
 const mainController = {
     index : async(req, res) => {
         try {
           //fetch al API de PokeAPI
-          const pokemonApi = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=25");
+          const pokemonApi = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=20");
           const pokemonApiLength = pokemonApi.data.results.length;
           const pokemonArray = [];
                 
@@ -25,7 +30,7 @@ const mainController = {
 
             const newPokeObj = {
               name: currentPoke.name,
-              image: pokeImage.data.sprites.other.dream_world.front_default,
+              image: validImage(pokeImage.data.sprites),
               id: pokeImage.data.id,
               type1: pokeImage.data.types[0].type.name, 
               type2: secondType(pokeImage.data.types[1]),
@@ -55,7 +60,7 @@ const mainController = {
     },
 
     results: async(req,res) => {
-      const pokemonApi = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=151");
+      const pokemonApi = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=1180");
       const allPokeNAmes = pokemonApi.data.results;
       let results = [];
       let nameSearched = req.query.keywords;
@@ -73,7 +78,7 @@ const mainController = {
           const pokeImage = await axios.get(results[i].url);   
           const newPokeObj = {
             name: currentPoke.name,
-            image: pokeImage.data.sprites.other.dream_world.front_default,
+            image: validImage(pokeImage.data.sprites),
             id: pokeImage.data.id,
             type1: pokeImage.data.types[0].type.name, 
             type2: secondType(pokeImage.data.types[1]),
