@@ -1,8 +1,7 @@
 *,
 *::before,
 *::after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 :root {
@@ -15,7 +14,6 @@
 body {
   font-family: "Roboto", sans-serif;
   min-height: 100vh;
-  display: -ms-grid;
   display: grid;
   place-items: center;
   background-image: url(../images/background.png);
@@ -38,15 +36,9 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   padding: 45px 100px;
   z-index: 10;
   background: rgba(2, 2, 2, 0.658);
@@ -83,18 +75,6 @@ header .search input {
   padding: 0 10px 0 45px;
 }
 
-header .search input::-webkit-input-placeholder {
-  color: #fff;
-}
-
-header .search input:-ms-input-placeholder {
-  color: #fff;
-}
-
-header .search input::-ms-input-placeholder {
-  color: #fff;
-}
-
 header .search input::placeholder {
   color: #fff;
 }
@@ -102,8 +82,7 @@ header .search input::placeholder {
 header .search .fa-search {
   position: absolute;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   left: 10px;
   color: #fff;
   border-right: 1px solid #fff;
@@ -112,28 +91,16 @@ header .search .fa-search {
 
 .navbar {
   min-height: 70px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   padding: 0 24px;
 }
 
 .nav-menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   gap: 60px;
   list-style: none;
 }
@@ -141,7 +108,6 @@ header .search .fa-search {
 .nav-link {
   color: #fff;
   text-decoration: none;
-  -webkit-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
 }
 
@@ -167,15 +133,9 @@ header .search .fa-search {
 .banner {
   padding: 200px 100px 100px;
   min-height: 80vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .banner .content {
@@ -206,17 +166,11 @@ header .search .fa-search {
 }
 
 .main-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-item-align: center;
-      align-self: center;
+  flex-wrap: wrap;
+  align-self: center;
   padding: 2rem;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
 
 #filtered-main-container {
@@ -239,15 +193,13 @@ header .search .fa-search {
   right: 10px;
   max-width: 70px;
   max-height: 70px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   border: 5px solid #262122;
   width: 250px;
   height: 250px;
   border-radius: 100%;
   margin: 0 auto;
   cursor: pointer;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ba0c2f), color-stop(49%, #ba0c2f), color-stop(50%, #262122), color-stop(51%, #fff), to(#fff));
   background: linear-gradient(180deg, #ba0c2f 0%, #ba0c2f 49%, #262122 50%, #fff 51%, #fff 100%);
   z-index: 20;
 }
@@ -256,27 +208,19 @@ header .search .fa-search {
   position: relative;
   width: 100%;
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   color: black;
   font-size: 3rem;
   font-weight: 700;
   border-radius: 50%;
-  -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
   z-index: 30;
 }
 
 .action.active span {
-  -webkit-transform: rotate(135deg);
-          transform: rotate(135deg);
+  transform: rotate(135deg);
 }
 
 .action ul {
@@ -289,7 +233,6 @@ header .search .fa-search {
   border-radius: 20px;
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: 0.3s;
   transition: 0.3s;
   z-index: 100;
 }
@@ -299,24 +242,16 @@ header .search .fa-search {
   opacity: 1;
   visibility: hidden;
   visibility: visible;
-  -webkit-transition: 0.3s;
   transition: 0.3s;
   z-index: 30;
 }
 
 .action.active ul li {
   list-style: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: flex-start;
+  align-items: center;
   padding: 10px 0;
-  -webkit-transition: 0.3s;
   transition: 0.3s;
   color: black;
 }
@@ -332,8 +267,7 @@ header .search .fa-search {
 .action ul li i {
   margin-right: 10px;
   opacity: 0.2;
-  -webkit-transform: scale(0.8);
-          transform: scale(0.8);
+  transform: scale(0.8);
 }
 
 .action ul li:hover i {
@@ -351,7 +285,6 @@ header .search .fa-search {
   border-radius: 10px;
   cursor: pointer;
 }
-
 .pokemon-container img {
   width: 200px;
   height: 200px;
@@ -363,12 +296,9 @@ header .search .fa-search {
 }
 
 .types {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   text-align: center;
 }
-
 .types img {
   width: 2em;
   height: 2em;
@@ -383,46 +313,30 @@ header .search .fa-search {
   font-size: 1.125rem;
   background: var(--clr-poke-red);
   padding: 0.5em 0.5em 0.75em;
-  -webkit-clip-path: polygon(100% 0%, 100% 100%, 50% 85%, 0 100%, 0 0);
-          clip-path: polygon(100% 0%, 100% 100%, 50% 85%, 0 100%, 0 0);
-  -webkit-transition: var(--transition);
+  clip-path: polygon(100% 0%, 100% 100%, 50% 85%, 0 100%, 0 0);
   transition: var(--transition);
 }
 
 .front {
-  -webkit-transition: 250ms;
   transition: 250ms;
 }
-
 .front .thumbnail {
   border-radius: var(--br);
 }
-
 .front .stats {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
 }
-
 .front .types img {
   border: 2px solid rgba(255, 255, 255, 0.185);
 }
-
 .front .types img:nth-of-type(1) {
-  -webkit-transform: translateX(50%);
-          transform: translateX(50%);
+  transform: translateX(50%);
   z-index: 1;
 }
-
 .front .types img:nth-of-type(2) {
-  -webkit-transform: translateX(25%);
-          transform: translateX(25%);
+  transform: translateX(25%);
 }
 
 .back {
@@ -431,33 +345,20 @@ header .search .fa-search {
   top: 55%;
   left: 0;
   right: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
   gap: 1.5em;
-  -webkit-transform: translateY(35%);
-          transform: translateY(35%);
+  transform: translateY(35%);
 }
-
 .back .pokemon-info {
-  -webkit-columns: 2;
-          columns: 2;
-  -webkit-column-rule: 1px solid rgba(255, 255, 255, 0.25);
-          column-rule: 1px solid rgba(255, 255, 255, 0.25);
+  columns: 2;
+  column-rule: 1px solid rgba(255, 255, 255, 0.25);
 }
-
 .back .game-stat {
   font-size: 1.125rem;
   text-align: center;
 }
-
 .back .game-stat span {
   font-size: 0.85rem;
   display: block;
@@ -471,146 +372,123 @@ header .search .fa-search {
   left: 0;
   right: 0;
   z-index: -1;
-  -webkit-transform: scale(0.2, 0.9);
-          transform: scale(0.2, 0.9);
+  transform: scale(0.2, 0.9);
   opacity: 0;
   border-radius: var(--br);
   overflow: hidden;
 }
-
 .background img {
   opacity: 0.3;
-  -webkit-clip-path: url(#wave);
-          clip-path: url(#wave);
+  clip-path: url(#wave);
   height: 30%;
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .pokemon-container:hover {
   background-color: rgba(255, 255, 255, 0);
 }
-
 .pokemon-container:hover .pokeId {
-  -webkit-transform: translate(150%, -61%);
-          transform: translate(150%, -61%);
+  transform: translate(150%, -61%);
 }
-
 .pokemon-container:hover .front {
-  -webkit-transform: translateY(-30%) scale(0.8);
-          transform: translateY(-30%) scale(0.8);
+  transform: translateY(-30%) scale(0.8);
 }
-
 .pokemon-container:hover .front .stats {
   opacity: 0;
 }
-
 .pokemon-container:hover .back {
   opacity: 1;
-  -webkit-transition: opacity 150ms linear, -webkit-transform 250ms ease;
-  transition: opacity 150ms linear, -webkit-transform 250ms ease;
   transition: transform 250ms ease, opacity 150ms linear;
-  transition: transform 250ms ease, opacity 150ms linear, -webkit-transform 250ms ease;
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
+  transform: translateY(0);
 }
-
 .pokemon-container:hover .back .types {
   width: 100%;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
-
 .pokemon-container:hover .back .sprite-container {
   font-size: 0.9rem;
 }
-
 .pokemon-container:hover .back .sprites img {
   height: 100px;
   width: 100px;
   position: relative;
   bottom: 30px;
 }
-
 .pokemon-container:hover .background {
-  -webkit-transition: var(--transition), opacity 100ms linear;
   transition: var(--transition), opacity 100ms linear;
   opacity: 1;
-  -webkit-transform: scale(1.2, 1.2) translateY(5%);
-          transform: scale(1.2, 1.2) translateY(5%);
+  transform: scale(1.2, 1.2) translateY(5%);
 }
 
 @media (max-width: 990px) {
   header {
     padding: 10px 20px;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
   }
+
   .banner {
     padding: 150px 20px 50px;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
+    flex-direction: column-reverse;
     margin-top: 20px;
   }
+
   .banner .image {
     margin-left: 0;
     max-width: 80%;
     margin-top: 30px;
   }
+
   .banner .content h2 {
     font-size: 2em;
   }
+
   .pokemon-container {
     padding-top: 2rem;
     padding-bottom: 2rem;
   }
 }
-
 @media (max-width: 768px) {
   .hamburger {
     display: block;
   }
+
   .hamburger.active .bar:nth-child(2) {
     opacity: 0;
   }
+
   .hamburger.active .bar:nth-child(1) {
-    -webkit-transform: translateY(8px) rotate(45deg);
-            transform: translateY(8px) rotate(45deg);
+    transform: translateY(8px) rotate(45deg);
   }
+
   .hamburger.active .bar:nth-child(3) {
-    -webkit-transform: translateY(-8px) rotate(-45deg);
-            transform: translateY(-8px) rotate(-45deg);
+    transform: translateY(-8px) rotate(-45deg);
   }
+
   .nav-menu {
     position: fixed;
     left: -100%;
     top: 170px;
     gap: 0;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     background-color: rgba(0, 0, 0, 0.6);
     width: 100%;
     z-index: 1000;
     text-align: center;
-    -webkit-transition: 0.3s;
     transition: 0.3s;
   }
+
   .nav-item {
     margin: 16px 0;
   }
+
   .nav-menu.active {
     left: 0;
   }
+
   .complete-nav.active {
     position: fixed;
   }
 }
+
 /*# sourceMappingURL=style.css.map */

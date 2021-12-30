@@ -85,7 +85,6 @@ const mainController = {
             shinysprite: pokeImage.data.sprites.front_shiny,
           };
           pokemonArray.push(newPokeObj);
-          console.log(pokemonArray)
         }
         res.render("filtered", { pokemon: pokemonArray });  
           
