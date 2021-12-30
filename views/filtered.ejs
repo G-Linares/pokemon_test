@@ -5,25 +5,6 @@
   </head>
   <body>
     <%- include('./partials/header') %>
-    <div class="banner">
-      <div class="content">
-        <h2> Search For Your Pokemon</h2>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit aspernatur assumenda dignissimos quis. Blanditiis ratione odio natus vel alias assumenda sequi distinctio laboriosam quas obcaecati unde consectetur quaerat vero qui quibusdam cum eligendi dolore cupiditate, eveniet quis perferendis. </p>
-        <form action="/search" method="GET">
-          <input type="text" placeholder="Search for you pokemon..." name="keywords"><br>
-        </form>
-      </div>
-      <img src="images/pokeball.png" alt="">
-    </div>
-    <div class="action" onclick="toggleButton();">
-      <span>+</span>
-      <ul>
-        <li><i class="fab fa-facebook"></i>Share on Facebook</li>
-        <li><i class="fab fa-instagram"></i>Share on Instagram</li>
-        <li><i class="fab fa-twitter"></i>Share on Twitter</li>
-        <li><i class="far fa-envelope"></i>Contact us via Email</li>
-      </ul>
-    </div>
 
     <div class="main-container">
       <% pokemon.forEach(function(pokemon){ %>

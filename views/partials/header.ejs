@@ -1,18 +1,27 @@
-<header>
-  <a href="#" class="logo"><img src="images/logo.png" alt="" /></a>
-  <div class="hamburger" onclick="toggleNavMenu();">
-    <i class="fas fa-bars"></i>
-  </div>
-  <ul class="nav-menu">
-    <li><a href="/" class="nav-link">Home</a></li>
-    <li><a href="#" class="nav-link">Shop</a></li>
-    <li><a href="#" class="nav-link">About Us</a></li>
-    <li><a href="#" class="nav-link">Contact</a></li>
-    <li><a href="#" class="nav-link">Donate</a></li>
-  </ul>
+<header class="complete-nav">
+  <a href="/" class="logo"><img src="images/logo.png" alt="" /></a>
+  <nav class="navbar">
+    <ul class="nav-menu">
+      <li class="nav-item">
+        <a href="/" class="nav-link">Home</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">Shop</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">Contact</a>
+      </li>
+    </ul>
+    <div class="hamburger">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  </nav>
+
   <div class="search">
-    <form>
-      <input type="text" placeholder="Search for you pokemon" />
+    <form action="/search" method="GET">
+      <input type="text" placeholder="Search for you pokemon" name="keywords">
     </form>
     <i class="fas fa-search"></i>
   </div>

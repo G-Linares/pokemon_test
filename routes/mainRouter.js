@@ -4,7 +4,7 @@ const mainController = require('../controllers/mainController');
 
 /* Ruta principal */
 mainRouter.get('/', mainController.index);
-mainRouter.get('/',mainController.details);
+mainRouter.get('/search',mainController.results);
 
 
 module.exports = mainRouter;
