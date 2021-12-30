@@ -3,13 +3,8 @@ const axios = require('axios');
 const mainController = {
     index : async(req, res) => {
         try {
-          
-          // const pokemonApi = await axios.get(`https://pokeapi.co/api/v2/pokemon/`)
-          // console.log(pokemonApi.data)
-          // res.render('index', {pokemon : pokemonApi.data});
-          
           //fetch al API de PokeAPI
-          const pokemonApi = await axios.get("https://pokeapi.co/api/v2/pokemon");
+          const pokemonApi = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=100");
           const pokemonApiLength = pokemonApi.data.results.length;
           const pokemonArray = [];
           
@@ -37,14 +32,12 @@ const mainController = {
               ability: pokeImage.data.abilities[0].ability.name,
               sprite: pokeImage.data.sprites.front_default,
               shinysprite: pokeImage.data.sprites.front_shiny,
-              
             };
             pokemonArray.push(newPokeObj);
             // console.log(newPokeObj);
           }
-    
           res.render("index", { pokemon: pokemonArray });  
-  
+          
         } catch (error) {
           if(error.response){
             console.log(error.response.data);
@@ -56,9 +49,11 @@ const mainController = {
             console.log('Error', error.message);
           }
         }
-      }
-      
+      },
 
+      details: (req,res) => {
+        res.send('Aqui esta la ruta');
+      }
 }
 
 
